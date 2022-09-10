@@ -37,4 +37,4 @@ jobs:
       run: npm run build
 
     - name: Deploy build file
-      run: mv /GithubRunner/projects/github_action_test/github_action_test/build /GithubRunner/projects/github_action_test/github_action_test/prod
+      run: mv /GithubRunner/projects/github_action_test/github_action_test/build /GithubRunner/projects/github_action_test/PRODUCTION_FILES/
