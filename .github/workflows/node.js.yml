@@ -26,6 +26,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    
+    - name: Stop IIS
+      run: Stop-Website -Name "GITHUB_TEST"
+
+    - name: Start IIS
+      run: Start-Website -Name "GITHUB_TEST"
 
     - name: Install fresh dependencies  
       run: npm ci
