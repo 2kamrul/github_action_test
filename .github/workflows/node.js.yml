@@ -48,8 +48,8 @@ jobs:
     - name: Copy files to production folder
       run: copy-Item -Path "\GithubRunner\projects\github_action_test\github_action_test\build\*" -Destination "\GithubRunner\projects\github_action_test\production_build" -Recurse -force
 
-    - name: Stop IIS
-      run: Stop-Website -Name "GITHUB_TEST"
+    # - name: Stop IIS
+    #   run: Stop-Website -Name "GITHUB_TEST"
 
-    - name: Start IIS
-      run: Start-Website -Name "GITHUB_TEST"
+    # - name: Start IIS
+    #   run: Start-Website -Name "GITHUB_TEST"
