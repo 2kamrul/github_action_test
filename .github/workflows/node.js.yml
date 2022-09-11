@@ -26,9 +26,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+
+    - name: Install fresh dependencies  
     - run: npm ci
-    - name: Install dependencies
-      run: npm install
+
+    # - name: Install dependencies
+    #   run: npm install
       
     - name: Run the tests
       run: npm test
@@ -36,5 +39,5 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: Deploy build file
-      run: copy-Item "\GithubRunner\projects\github_action_test\github_action_test\build\*" -Destination "\GithubRunner\projects\github_action_test\production_build" -Recurse -force
+    - name: Copy files to production folder
+      run: copy-Item -Path "\GithubRunner\projects\github_action_test\github_action_test\build\*" -Destination "\GithubRunner\projects\github_action_test\production_build" -Recurse -force
