@@ -20,11 +20,11 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - name: Stop IIS
-      run: Stop-Website -Name "GITHUB_TEST"
+    # - name: Stop IIS
+    #   run: Stop-Website -Name "GITHUB_TEST"
 
-    - name: Start IIS
-      run: Start-Website -Name "GITHUB_TEST"
+    # - name: Start IIS
+    #   run: Start-Website -Name "GITHUB_TEST"
 
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
