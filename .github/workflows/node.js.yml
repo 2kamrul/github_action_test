@@ -19,6 +19,12 @@ jobs:
         node-version: [14.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
+    - name: Stop IIS
+      run: Stop-Website -Name "GITHUB_TEST"
+
+    - name: Start IIS
+      run: Start-Website -Name "GITHUB_TEST"
+
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
